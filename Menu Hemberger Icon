@@ -1,0 +1,62 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Icon Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.menu-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.bar {
+    background-color: #333;
+    height: 5px;
+    width: 100%;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-active .bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-active .bar2 {
+    opacity: 0;
+}
+
+.menu-active .bar3 {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+</style>
+</head>
+<body>
+    <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </div>
+    <script src="script.js"></script>
+<script>
+function toggleMenu() {
+    const menuIcon = document.getElementById('menuIcon');
+    menuIcon.classList.toggle('menu-active');
+}
+</script>
+</body>
+</html>
+
